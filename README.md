@@ -1,6 +1,9 @@
-# lsu-scheduler
+# lsu-scheduler (https://lsu-scheduler.herokuapp.com/)
 
-This README outlines the details of collaborating on this Ember application.
+This README outlines the details of collaborating on this Ember/nodejs
+application hosted freely by Heroku.
+
+https://lsu-scheduler.herokuapp.com/.
 
 A short introduction of this app could easily go here.
 
@@ -39,7 +42,11 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+* Build ember with the command `ember build --environment=production`
+* Commit changes
+  * `git add ./dist -f`
+  * `git commit -m "Deploy: add ember ./dist folder"`
+* Deploy to Heroku with `git push heroku master`
 
 ## Further Reading / Useful Links
 
@@ -48,4 +55,4 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+* Getting Started with Node.js on Heroku (https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
