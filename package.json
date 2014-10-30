@@ -10,7 +10,8 @@
     "pg": "2.x",
     "express": "~4.9.x",
     "cool-ascii-faces": "~1.3.x",
-    "compression": ">= 0.0.0"
+    "compression": ">= 0.0.0",
+    "newrelic": "~1.12.2"
   },
   "scripts": {
     "start": "ember server",
@@ -34,6 +35,7 @@
     "ember-cli-qunit": "0.1.0",
     "ember-data": "1.0.0-beta.10",
     "express": "^4.8.5",
-    "glob": "^4.0.5"
+    "glob": "^4.0.5",
+    "newrelic": "~1.12.2"
   }
 }
