@@ -13,6 +13,12 @@ You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
 * [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+* [ember-cli](http://www.ember-cli.com/)
+
+That's all you need for development.
+
+To deploy, you also need to be setup with Heroku. There are
+guides for that at the bottom under Useful Links.
 
 ## Installation
 
