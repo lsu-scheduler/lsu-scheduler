@@ -10,7 +10,7 @@ app.use(compress());
 app.use(express.static(__dirname + '/dist'));
 
 app.get('/db', function (request, response) {
-  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+  pg.connect(process.env.DATABASE_URL || "postgres://selby@localhost/lsu-scheduler", function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
       done();
       if (err)

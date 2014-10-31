@@ -1,0 +1,9 @@
+{"name":"newrelic","hostname":"cecilia","pid":10126,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-30T23:54:05.466Z","v":0}
+{"name":"newrelic","hostname":"cecilia","pid":10126,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/806800/applications/5261314","time":"2014-10-30T23:54:06.359Z","v":0}
+{"name":"newrelic","hostname":"cecilia","pid":10126,"component":"collector_api","level":30,"msg":"Connected to collector-109.newrelic.com:443 with agent run ID 1812863406.","time":"2014-10-30T23:54:06.360Z","v":0}
+{"name":"newrelic","hostname":"cecilia","pid":23475,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-31T00:09:58.397Z","v":0}
+{"name":"newrelic","hostname":"cecilia","pid":23475,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/806800/applications/5261314","time":"2014-10-31T00:09:59.257Z","v":0}
+{"name":"newrelic","hostname":"cecilia","pid":23475,"component":"collector_api","level":30,"msg":"Connected to collector-109.newrelic.com:443 with agent run ID 1812899863.","time":"2014-10-31T00:09:59.257Z","v":0}
+{"name":"newrelic","hostname":"cecilia","pid":29995,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-10-31T00:17:36.568Z","v":0}
+{"name":"newrelic","hostname":"cecilia","pid":29995,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/806800/applications/5261314","time":"2014-10-31T00:17:37.432Z","v":0}
+{"name":"newrelic","hostname":"cecilia","pid":29995,"component":"collector_api","level":30,"msg":"Connected to collector-109.newrelic.com:443 with agent run ID 1812916595.","time":"2014-10-31T00:17:37.432Z","v":0}
