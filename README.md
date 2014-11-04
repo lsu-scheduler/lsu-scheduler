@@ -20,17 +20,34 @@ That's all you need for development.
 To deploy, you also need to be setup with Heroku. There are
 guides for that at the bottom under Useful Links.
 
+Steps:
+
+1. Install [Node.js](http://nodejs.org/) (with [NPM](https://www.npmjs.org/))
+2. Install ember-cli and bower
+* `npm install ember-cli -g` 
+* `npm install bower -g`
+
+Note: The -g flag means it is installing globally, so you need superuser/admin privileges.  on linux, prefix "sudo " to the commands
+
 ## Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
+1. Clone https://github.com/selbyk/lsu-scheduler
+* `git clone git://github.com/selbyk/lsu-scheduler.git`
+2. Move to the directory
+* `cd lsu-scheduler`
+3. Install nodejs dependencies (development tools, server, & ember-cli addons)
 * `npm install`
+4. Install bower dependencies (bootstrap, fontawesome, js/css libraries for the web)
 * `bower install`
+
+After that, you'll have a working development environment.
 
 ## Running / Development
 
 * `ember server`
 * Visit your app at http://localhost:4200.
+
+Check out [ember-cli](http://www.ember-cli.com/), it controls all your developments.
 
 ### Code Generators
 
