@@ -1,9 +1,11 @@
+// New relic does our performance and avaliability testing/analytics
 require('newrelic');
-var express = require('express');
-var app = express();
-var compress = require('compression');
-var pg = require('pg');
-var httpRequest = require('request').defaults({jar: true, debug: true});
+// Setup some variables as npm modules
+var express = require('express'),
+  app = express(),
+  compress = require('compression'),
+  pg = require('pg'),
+  httpRequest = require('request').defaults({jar: true, debug: true});
 
 // Tell Express which port to use, process.env.PORT is set by heroku
 app.set('port', (process.env.PORT || 5000));
