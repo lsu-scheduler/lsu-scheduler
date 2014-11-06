@@ -1,0 +1,18 @@
+{
+  "dev": {
+    "driver": "sqlite3",
+    "filename": "~/dev.db"
+  },
+  "test": {
+    "driver": "sqlite3",
+    "filename": "~/dev.db"
+  },
+  "pg": {
+    "driver": "pg",
+    "user": "test",
+    "password": "test",
+    "host": "localhost",
+    "database": "mydb"
+  },
+  "other": "postgres://uname:pw@server.com/dbname"
+}
