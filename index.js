@@ -23,18 +23,6 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 
 // Example select statement from db
-app.get('/db', function (request, response) {
-  pg.connect(process.env.DATABASE_URL || "postgres://selby@localhost/lsu-scheduler", function(err, client, done) {
-    client.query('SELECT * FROM test_table', function(err, result) {
-      done();
-      if (err)
-       { console.error(err); response.send("Error " + err); }
-      else
-       { response.send(result.rows); }
-    });
-  });
-});
-
 app.get('/api/test_db', function(request, response){
   db.test_db.findAll().complete(function(err, test_dbs) {
     if (!!err) {
@@ -47,6 +35,7 @@ app.get('/api/test_db', function(request, response){
     }
   });
 });
+// new department
 app.get('/api/department', function(request, response){
     var name = request.query.name;
     var department = db.department.build({
@@ -71,7 +60,7 @@ app.get('/api/departments', function(request, response){
       response.send('uh oh.');
       console.log('uh oh.')
     } else {
-      response.send(departments);
+      response.send({'departments': departments});
     }
   });
 });

@@ -7,6 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('schedule', { path: 'schedules' });
+  this.resource('model', { path: 'models/:model_id' }, function() { });
+  this.resource('department', { path: 'departments/:department_id' }, function() { });
 });
 
 export default Router;
