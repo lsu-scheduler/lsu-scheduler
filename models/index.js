@@ -15,7 +15,7 @@ if (!global.hasOwnProperty('db')) {
     })
   } else {
     // the application is executed on the local machine ... use mysql
-    sequelize = new Sequelize('lsu-scheduler', 'root' , null, {
+    sequelize = new Sequelize('lsu-scheduler', 'root' , 'kendrick', {
       dialect:  'mysql',
       protocol: 'mysql',
       port:     3306,
