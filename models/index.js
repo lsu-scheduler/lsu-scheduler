@@ -28,7 +28,8 @@ if (!global.hasOwnProperty('db')) {
   global.db = {
     Sequelize: Sequelize,
     sequelize: sequelize,
-    test_db:      sequelize.import(__dirname + '/test')
+    test_db:      sequelize.import(__dirname + '/test'),
+    department:      sequelize.import(__dirname + '/department')
 
     // add your other models here
   }

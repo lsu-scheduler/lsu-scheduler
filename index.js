@@ -43,6 +43,19 @@ app.get('/api/test_db', function(request, response){
   });
 });
 
+app.get('/api/department', function(request, response){
+  db.department.findAll().complete(function(err, departments) {
+    if (!!err) {
+      console.log('An error occurred while returning models', err)
+    } else if (!departments) {
+      response.send('uh oh.');
+      console.log('uh oh.')
+    } else {
+      response.send(departments);
+    }
+  });
+});
+
 // Example fetch request to get lsu course info
 app.get('/fetch/courses', function (request, response) {
   var url = 'http://appl003.lsu.edu/booklet2.nsf/All/02FDBC283730AC5386257D69002EC178?OpenDocument&SemesterDesc=Spring+2015&Department=ACCOUNTING';
