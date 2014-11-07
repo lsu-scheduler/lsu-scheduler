@@ -5,7 +5,6 @@ var express = require('express'),
   app = express(),
   http = require('http'),
   compress = require('compression'),
-  pg = require('pg'),
   db = require('./models'),
   httpRequest = require('request').defaults({jar: true, debug: true}),
   bodyParser = require('body-parser');
