@@ -3,8 +3,10 @@ require('newrelic');
 // Setup some variables as npm modules
 var express = require('express'),
   app = express(),
+  http = require('http'),
   compress = require('compression'),
   pg = require('pg'),
+  db = require('./models'),
   httpRequest = require('request').defaults({jar: true, debug: true});
 
 // Tell Express which port to use, process.env.PORT is set by heroku
@@ -28,6 +30,19 @@ app.get('/db', function (request, response) {
   });
 });
 
+app.get('/api/test_db', function(request, response){
+  db.test_db.findAll().complete(function(err, test_dbs) {
+    if (!!err) {
+      console.log('An error occurred while returning models', err)
+    } else if (!test_dbs) {
+      response.send(test_dbs);
+      console.log('uh oh.')
+    } else {
+      response.send(test_dbs);
+    }
+  });
+});
+
 // Example fetch request to get lsu course info
 app.get('/fetch/courses', function (request, response) {
   var url = 'http://appl003.lsu.edu/booklet2.nsf/All/02FDBC283730AC5386257D69002EC178?OpenDocument&SemesterDesc=Spring+2015&Department=ACCOUNTING';
@@ -47,7 +62,12 @@ app.get('/fetch/courses', function (request, response) {
   });
 });
 
-// Start the server
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'));
+db.sequelize.sync().complete(function(err) {
+  if (err) {
+    throw err[0];
+  } else {
+    http.createServer(app).listen(app.get('port'), function(){
+      console.log('Express server listening on port ' + app.get('port'));
+    });
+  }
 });
