@@ -45,7 +45,7 @@ app.get('/api/department', function(request, response){
     });
   department.save()
     .complete(function(err) {
-      if (!!err) {
+      i f (!!err) {
         response.send('The instance has not been saved:');
         console.log('The instance has not been saved:', err)
       } else {

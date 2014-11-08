@@ -8,6 +8,7 @@ html, body {
 
 .page-header {
   margin-top: 0px !important;
+  text-align: center !important;
 }
 
 .page-header h1 {

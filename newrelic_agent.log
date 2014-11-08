@@ -120,3 +120,15 @@
 {"name":"newrelic","hostname":"chester-mbp","pid":3803,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-11-08T22:13:59.305Z","v":0}
 {"name":"newrelic","hostname":"chester-mbp","pid":3803,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/806800/applications/5261314","time":"2014-11-08T22:14:03.129Z","v":0}
 {"name":"newrelic","hostname":"chester-mbp","pid":3803,"component":"collector_api","level":30,"msg":"Connected to collector-109.newrelic.com:443 with agent run ID 1843854756.","time":"2014-11-08T22:14:03.130Z","v":0}
+{"name":"newrelic","hostname":"chester-mbp","pid":3826,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-11-08T22:24:26.738Z","v":0}
+{"name":"newrelic","hostname":"chester-mbp","pid":3826,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/806800/applications/5261314","time":"2014-11-08T22:24:38.640Z","v":0}
+{"name":"newrelic","hostname":"chester-mbp","pid":3826,"component":"collector_api","level":30,"msg":"Connected to collector-109.newrelic.com:443 with agent run ID 1843878181.","time":"2014-11-08T22:24:38.641Z","v":0}
+{"name":"newrelic","hostname":"chester-mbp","pid":3828,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-11-08T22:25:04.050Z","v":0}
+{"name":"newrelic","hostname":"chester-mbp","pid":3828,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/806800/applications/5261314","time":"2014-11-08T22:25:08.692Z","v":0}
+{"name":"newrelic","hostname":"chester-mbp","pid":3828,"component":"collector_api","level":30,"msg":"Connected to collector-109.newrelic.com:443 with agent run ID 1843879626.","time":"2014-11-08T22:25:08.693Z","v":0}
+{"name":"newrelic","hostname":"chester-mbp","pid":3835,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-11-08T22:31:00.981Z","v":0}
+{"name":"newrelic","hostname":"chester-mbp","pid":3835,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/806800/applications/5261314","time":"2014-11-08T22:31:04.366Z","v":0}
+{"name":"newrelic","hostname":"chester-mbp","pid":3835,"component":"collector_api","level":30,"msg":"Connected to collector-109.newrelic.com:443 with agent run ID 1843893673.","time":"2014-11-08T22:31:04.367Z","v":0}
+{"name":"newrelic","hostname":"chester-mbp","pid":3843,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-11-08T22:38:25.155Z","v":0}
+{"name":"newrelic","hostname":"chester-mbp","pid":3843,"component":"new_relic_response","level":30,"msg":"Reporting to: https://rpm.newrelic.com/accounts/806800/applications/5261314","time":"2014-11-08T22:38:28.828Z","v":0}
+{"name":"newrelic","hostname":"chester-mbp","pid":3843,"component":"collector_api","level":30,"msg":"Connected to collector-109.newrelic.com:443 with agent run ID 1843909508.","time":"2014-11-08T22:38:28.829Z","v":0}
