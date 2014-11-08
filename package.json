@@ -17,8 +17,13 @@
     "pg": "~2.11.1",
     "request": "~2.47.0",
     "sequelize": "~2.0.0-rc2",
+<<<<<<< HEAD
     "sequelize-cli": "^0.3.3",
     "sqlite3": "~3.0.2"
+=======
+    "body-parser": "~1.9.2",
+    "cors": "~2.5.1"
+>>>>>>> master
   },
   "scripts": {
     "start": "ember server",
