@@ -36,6 +36,7 @@ app.get('/api/test_db', function(request, response){
     }
   });
 });
+
 // new department
 app.get('/api/department', function(request, response){
     var name = request.query.name;
@@ -83,6 +84,11 @@ app.get('/fetch/courses', function (request, response) {
   function (httpError, httpResponse, httpBody) {
     response.send(httpBody);
   });
+});
+
+// Send html file if it doesn't match any backend route
+app.get('*', function(request, response){
+  response.sendFile(__dirname + '/dist/index.html');
 });
 
 db.sequelize.sync().complete(function(err) {
