@@ -17,7 +17,8 @@
     "mysql": "~2.5.3",
     "sqlite3": "~3.0.2",
     "sequelize": "~2.0.0-rc2",
-    "body-parser": "~1.9.2"
+    "body-parser": "~1.9.2",
+    "cors": "~2.5.1"
   },
   "scripts": {
     "start": "ember server",
