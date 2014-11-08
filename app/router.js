@@ -10,6 +10,7 @@ Router.map(function() {
   this.resource('model', { path: 'models/:model_id' }, function() { });
   this.resource('department', { path: 'departments/:department_id' }, function() { });
   this.resource('departments', function() { });
+  this.route('credits', { path: 'credits' });
 });
 
 export default Router;
