@@ -1,48 +1,44 @@
-# lsu-scheduler (https://lsu-scheduler.herokuapp.com/)
+# [lsu-scheduler](https://lsu-scheduler.herokuapp.com/)
 
-This README outlines the details of collaborating on this Ember/nodejs
-application hosted freely by Heroku.
+This README outlines the details of collaborating on this [Ember](http://emberjs.joefiorini.com/)/[Node.js](http://nodejs.org/)
+application hosted freely by [Heroku](https://heroku.com/).
 
-https://lsu-scheduler.herokuapp.com/.
+[a short introduction of this app]
 
-A short introduction of this app could easily go here.
+## Getting Started
 
-## Prerequisites
+Are you new to git? I urge you to complete [this interactive git tutorial](http://pcottle.github.io/learnGitBranching/).
+
+Is Ember new to you? Read the [ember-cli Beginner Tutorial](http://www.codeomnib.us/ember-cli-beginner-tutorial/)
+
+## Frontend
+
+### Prerequisites
 
 You will need the following things properly installed on your computer.
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
-* [ember-cli](http://www.ember-cli.com/)
+#### Git
+* [Getting Started Installing Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-That's all you need for development.
+#### Node.js
+* [How to Install Node.js](http://howtonode.org/how-to-install-nodejs)
 
-To deploy, you also need to be setup with Heroku. There are
-guides for that at the bottom under Useful Links.
+#### Bower
+* [How to Install Bower](http://bower.io/)
 
-Steps:
+#### ember-cli
+* [How to Install ember-cli](http://www.ember-cli.com/)
 
-1. Install [Node.js](http://nodejs.org/) (with [NPM](https://www.npmjs.org/))
-2. Install ember-cli and bower
-* `npm install ember-cli -g` 
-* `npm install bower -g`
+### Installation
 
-Note: The -g flag means it is installing globally, so you need superuser/admin privileges.  on linux, prefix "sudo " to the commands
+```bash
+$ git clone git://github.com/selbyk/lsu-scheduler.git
+$ cd lsu-scheduler
+$ npm install
+$ bower install
+```
 
-## Installation
-
-1. Clone https://github.com/selbyk/lsu-scheduler
-* `git clone git://github.com/selbyk/lsu-scheduler.git`
-2. Move to the directory
-* `cd lsu-scheduler`
-3. Install nodejs dependencies (development tools, server, & ember-cli addons)
-* `npm install`
-4. Install bower dependencies (bootstrap, fontawesome, js/css libraries for the web)
-* `bower install`
-
-After that, you'll have a working development environment.
-
-## Running / Development
+### Running / Development
 
 * `ember server`
 * Visit your app at http://localhost:4200.
@@ -63,13 +59,24 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
+## Backend
 
-* Build ember with the command `ember build --environment=production`
-* Commit changes
-  * `git add ./dist -f`
-  * `git commit -m "Deploy: add ember ./dist folder"`
-* Deploy to Heroku with `git push heroku master`
+### Running / Development
+
+* `ember server`
+* Configure your local database in `./models/index.js`
+* `node index.js`
+* Change `lsu-scheduler.herokuapp.com/api` to `localhost:5000/api` in
+`./app/adapters/application.js`
+* Visit your app at http://localhost:5000 or http://localhost:4200.
+
+Api calls come from http://localhost:5000/api
+
+`node index.js` must be restarted to show changes, it does not auto refresh on file changes
+like `ember s` does
+
+Check out the [project dependencies](lsu-scheduler.herokuapp.com/stack), they are all documented extremely well.
+
 
 ## Further Reading / Useful Links
 
