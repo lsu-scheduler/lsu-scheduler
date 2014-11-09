@@ -75,7 +75,7 @@ Api calls come from http://localhost:5000/api
 `node index.js` must be restarted to show changes, it does not auto refresh on file changes
 like `ember s` does
 
-Check out the [project dependencies](lsu-scheduler.herokuapp.com/stack), they are all documented extremely well.
+Check out the [project dependencies](https://lsu-scheduler.herokuapp.com/stack), they are all documented extremely well.
 
 
 ## Further Reading / Useful Links
