@@ -14,13 +14,15 @@ if (!global.hasOwnProperty('db')) {
       logging:  true //false
     })
   } else {
+    var fs = require('fs');
+    var dbInfo = JSON.parse(fs.readFileSync('./config/database.json', 'utf8'));
     // the application is executed on the local machine ... use mysql
-    sequelize = new Sequelize('lsu-scheduler', 'root' , null, {
-      dialect:  'mysql',
-      protocol: 'mysql',
-      port:     3306,
-      host:    'localhost',
-      logging:  false
+    sequelize = new Sequelize(dbInfo.dbName, dbInfo.dbUser , dbInfo.dbPassword, {
+      dialect:  dbInfo.connectionInfo.dialect,
+      protocol: dbInfo.connectionInfo.protocol,
+      port:     dbInfo.connectionInfo.port,
+      host:    dbInfo.connectionInfo.host,
+      logging:  dbInfo.connectionInfo.logging
     }
   );
   }

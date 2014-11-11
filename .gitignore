@@ -16,3 +16,6 @@ newrelic_agent.log
 /libpeerconnection.log
 npm-debug.log
 testem.log
+
+# independent databases!
+config/database.json
