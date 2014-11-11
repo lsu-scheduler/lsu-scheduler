@@ -29,9 +29,11 @@ if (!global.hasOwnProperty('db')) {
     Sequelize: Sequelize,
     sequelize: sequelize,
     test_db:      sequelize.import(__dirname + '/test'),
-    department:      sequelize.import(__dirname + '/department')
+    department:      sequelize.import(__dirname + '/department'),
+    course:       sequelize.import(__dirname + '/course')
 
     // add your other models here
+
   }
 
   /*
