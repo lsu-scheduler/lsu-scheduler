@@ -1,27 +1,12 @@
 {
-  "dev": {
-    "driver": "sqlite3",
-    "filename": "~/dev.db"
-  },
-
-  "test": {
-    "driver": "sqlite3",
-    "filename": ":memory:"
-  },
-
-  "prod": {
-    "driver": "mysql",
-    "user": "root",
-    "password": "root"
-  },
-
-  "pg": {
-    "driver": "pg",
-    "user": "test",
-    "password": "test",
-    "host": "localhost",
-    "database": "mydb"
-  },
-
-  "other": "postgres://uname:pw@server.com/dbname"
+  "dbName": "lsu-scheduler",
+  "dbUser": "root" ,
+  "dbPassword": "bytheway",
+  "connectionInfo": {
+    "dialect":  "mysql",
+    "protocol": "mysql",
+    "port":     "3306",
+    "host":    "localhost",
+    "logging":  true
+  }
 }
