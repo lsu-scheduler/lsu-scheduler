@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes){
-  return sequelize.define("courseOffering", {
+  return sequelize.define("course", {
     available: DataTypes.STRING,
     enrollmentCount: DataTypes.STRING,
     courseAbbrivation: DataTypes.STRING,
@@ -16,9 +16,4 @@ module.exports = function(sequelize, DataTypes){
     specialEnrollment: DataTypes.STRING,
     instructor: DataTypes.STRING
   })
-}  
-
-        
-
-      
-
+}
