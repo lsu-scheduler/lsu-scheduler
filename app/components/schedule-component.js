@@ -1,8 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+<<<<<<< HEAD
     _initializeCalendar: (function() {
       return this.$("#schedule").fullCalendar({
+=======
+    _initializeSchedule: (function() {
+      return $("#schedule").fullCalendar({
+>>>>>>> cb52da4d0c5365ef5384253beaead35073ee2495
         header: {
   				left: '',
   				center: '',
@@ -23,5 +28,4 @@ export default Ember.Component.extend({
         this.$("#schedule").fullCalendar('renderEvent', newEvent, true);
       }
     }
-
 });
