@@ -9,27 +9,26 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        {{#link-to 'index' class="navbar-brand text-center"}}LSU<br>Scheduler{{/link-to}}
+        {{#link-to 'index' class="navbar-brand text-center"}}&nbsp;&nbsp;<i class="fa fa-calendar"></i>&nbsp;&nbsp;LSU<br>Scheduler{{/link-to}}
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left" action="#" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Search for course or professor...">
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li>{{#link-to 'departments'}}Departments{{/link-to}}</li>
-          <li>{{#link-to 'schedule'}}Schedule{{/link-to}}</li>
+          <li>{{#link-to 'departments'}}<i class="fa fa-filter"></i> Departments{{/link-to}}</li>
+          <li>{{#link-to 'schedule'}}<i class="fa fa-calendar"></i> Schedule{{/link-to}}</li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Placeholder</a></li>
+              <li><a href="#"><i class="fa fa-spinner"></i> &nbsp;Placeholder</a></li>
               <li class="divider"></li>
-              <li>{{#link-to 'credits'}}The Stack{{/link-to}}</li>
-              <li>{{#link-to 'credits'}}Credits{{/link-to}}</li>
+              <li>{{#link-to 'stack'}}<i class="fa fa-cogs"></i> &nbsp;The Stack{{/link-to}}</li>
+              <li>{{#link-to 'stack'}}<i class="fa fa-question-circle"></i> &nbsp;Why?{{/link-to}}</li>
             </ul>
           </li>
         </ul>
@@ -39,6 +38,6 @@
 </div>
 
 {{outlet}}
-<hr>
+<hr class="featurette-divider">
 <p class="text-center">&copy 2014 Copyright by Some Guys and a Girl at LSU</p>
-<p class="text-center">You can find the source on <a href="https://github.com/selbyk/lsu-scheduler">GitHub</a></p>
+<p class="text-center">You can find the source on <a href="https://github.com/selbyk/lsu-scheduler"><i class="fa fa-github-alt"></i> GitHub</a></p>

@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    _initializeCalendar: (function() {
+    _initializeSchedule: (function() {
       return $("#schedule").fullCalendar({
         header: {
   				left: '',
@@ -23,5 +23,4 @@ export default Ember.Component.extend({
         this.$("#schedule").fullCalendar('renderEvent', newEvent, true);
       }
     }
-
 });
