@@ -100,3 +100,43 @@ db.sequelize.sync().complete(function(err) {
     });
   }
 });
+
+// Example fetch request to get lsu course info
+var fetchDepartments = function(){
+  console.log('Fetching departments...');
+  var departmentsExp = /([A-Z,'\s;pma&-]{3,})(?=<\/select>|$)/gm;
+  var url = 'http://appl003.lsu.edu/booklet2.nsf/Selector2?OpenForm';
+  httpRequest({
+    'url': url,
+    headers: {
+      'Host': 'appl003.lsu.edu',
+      'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/33.0',
+      'Referer': 'http://appl003.lsu.edu/booklet2.nsf/Selector2?OpenForm',
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Connection': 'keep-alive'
+    }
+  },
+  function (httpError, httpResponse, httpBody) {
+    lineArray = httpBody.match(departmentsExp);
+    lineArray.forEach(function(line){
+      line = line.trim();
+      if(line != ''){
+        department = db.department.build({
+          'name': line
+        });
+        department.save().complete(function(err) {
+          if (!!err) {
+            console.log('The instance has not been saved:', err);
+          } else {
+            //console.log('We have a persisted instance now');
+          }
+        });
+      }
+    });
+  });
+  // Fetch them every day
+  setTimeout(fetchDepartments, 1000*60*60*24);
+}
+
+// Wait five seconds and fetch the departments
+setTimeout(fetchDepartments, 1000*5);
