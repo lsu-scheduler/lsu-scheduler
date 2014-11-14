@@ -5,8 +5,9 @@
 /tmp
 
 # dependencies
-/node_modules
+/node_modules/*
 /bower_components/*
+/win-bin/node_modules/*
 
 # misc
 /.sass-cache
