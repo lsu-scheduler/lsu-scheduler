@@ -1,5 +1,5 @@
 {
-  "dbName": "lsu-scheduler",
+  "dbName": "LSU_Scheduler",
   "dbUser": "root" ,
   "dbPassword": "bytheway",
   "connectionInfo": {

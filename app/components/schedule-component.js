@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     _initializeSchedule: (function() {
-      return $("#schedule").fullCalendar({
+      return this.$("#schedule").fullCalendar({
         header: {
   				left: '',
   				center: '',
