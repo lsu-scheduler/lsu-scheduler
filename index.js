@@ -86,6 +86,56 @@ app.get('/fetch/courses', function (request, response) {
   });
 });
 
+// POST DEV AREA =========================================================================================
+
+app.post('/api/course', function(request, response)
+{
+  var courseBuild = db.course.build({
+      'available': request.body.available,
+      'enrollmentCount': request.body.enrollmentCount,
+      'courseAbbrivation': request.body.courseAbbrivation,
+      'courseNumber': request.body.courseNumber,
+      'type': request.body.type,
+      'sectionNumber': request.body.sectionNumber,
+      'courseTitle': request.body.courseTitle,
+      'creditHour': request.body.creditHour,
+      'timeBegin': request.body.timeBegin,
+      'timeEnd': request.body.timeEnd,
+      'days': request.body.days,
+      'room': request.body.room,
+      'building': request.body.building,
+      'specialEnrollment': request.body.specialEnrollment,
+      'instructor': request.body.instructor
+    });
+    courseBuild.save()
+    .complete(function(err) {
+        if (!!err) {
+          response.send('The instance has not been saved:');
+          console.log('The instance has not been saved:', err)
+        } else {
+          console.log('We have a persisted instance now');
+          response.send('We have a persisted instance now');
+        }
+    });
+  });
+
+
+app.get('/api/course', function(request, response){
+  db.course.findAll().complete(function(err, courses) {
+    if (!!err) {
+      console.log('An error occurred while returning models', err)
+    } else if (!courses) {
+      response.send('uh oh.');
+      console.log('uh oh.')
+    } else {
+      response.send({'courses': courses});
+    }
+  });
+});
+
+
+// =======================================================================================================
+
 // Send html file if it doesn't match any backend route
 app.get('*', function(request, response){
   response.sendFile(__dirname + '/dist/index.html');
