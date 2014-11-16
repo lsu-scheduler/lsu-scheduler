@@ -1,30 +1,49 @@
-# lsu-scheduler (https://lsu-scheduler.herokuapp.com/)
+# [lsu-scheduler](https://lsu-scheduler.herokuapp.com/)
 
-This README outlines the details of collaborating on this Ember/nodejs
-application hosted freely by Heroku.
+This README outlines the details of collaborating on this [Ember](http://emberjs.joefiorini.com/)/[Node.js](http://nodejs.org/)
+application hosted freely by [Heroku](https://heroku.com/).
 
-https://lsu-scheduler.herokuapp.com/.
+[a short introduction of this app]
 
-A short introduction of this app could easily go here.
+## Getting Started
 
-## Prerequisites
+Are you new to git? I urge you to complete [this interactive git tutorial](http://pcottle.github.io/learnGitBranching/).
+
+Is Ember new to you? Read the [ember-cli Beginner Tutorial](http://www.codeomnib.us/ember-cli-beginner-tutorial/)
+
+## Frontend
+
+### Prerequisites
 
 You will need the following things properly installed on your computer.
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+#### Git
+* [Getting Started Installing Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-## Installation
+#### Node.js
+* [How to Install Node.js](http://howtonode.org/how-to-install-nodejs)
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+#### Bower
+* [How to Install Bower](http://bower.io/)
 
-## Running / Development
+#### ember-cli
+* [How to Install ember-cli](http://www.ember-cli.com/)
+
+### Installation
+
+```bash
+$ git clone git://github.com/selbyk/lsu-scheduler.git
+$ cd lsu-scheduler
+$ npm install
+$ bower install
+```
+
+### Running / Development
 
 * `ember server`
 * Visit your app at http://localhost:4200.
+
+Check out [ember-cli](http://www.ember-cli.com/), it controls all your developments.
 
 ### Code Generators
 
@@ -40,13 +59,24 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
+## Backend
 
-* Build ember with the command `ember build --environment=production`
-* Commit changes
-  * `git add ./dist -f`
-  * `git commit -m "Deploy: add ember ./dist folder"`
-* Deploy to Heroku with `git push heroku master`
+### Running / Development
+
+* `ember server`
+* Configure your local database in `./models/index.js`
+* `node index.js`
+* Change `lsu-scheduler.herokuapp.com/api` to `localhost:5000/api` in
+`./app/adapters/application.js`
+* Visit your app at http://localhost:5000 or http://localhost:4200.
+
+Api calls come from http://localhost:5000/api
+
+`node index.js` must be restarted to show changes, it does not auto refresh on file changes
+like `ember s` does
+
+Check out the [project dependencies](https://lsu-scheduler.herokuapp.com/stack), they are all documented extremely well.
+
 
 ## Further Reading / Useful Links
 
@@ -56,3 +86,5 @@ Make use of the many generators for code, try `ember help generate` for more det
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 * Getting Started with Node.js on Heroku (https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
+* Getting Started with Node.js on Heroku: (https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
+* Getting Started with Node.js on Heroku: Provision a database (https://devcenter.heroku.com/articles/getting-started-with-nodejs#provision-a-database)
