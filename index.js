@@ -100,3 +100,106 @@ db.sequelize.sync().complete(function(err) {
     });
   }
 });
+
+app.post('/api/course', function(request, response))
+{
+  var department = new department();
+  department.available: request.body.available;
+  department.enrollmentCount: request.body.enrollmentCount;
+  department.courseAbbrivation: request.body.courseAbbrivation;
+  department.courseNumber: request.body.courseNumber;
+  department.type: request.body.type;
+  department.sectionNumber: request.body.sectionNumber;
+  department.courseTitle: request.body.courseTitl;
+  department.creditHour: request.body.creditHour;
+  department.timeBegin: request.body.timeBegin;
+  department.timeEnd: request.body.timeEnd;
+  department.days: request.body.days;
+  department.room: request.body.room;
+  department.building: request.body.building;
+  department.specialEnrollment: request.body.specialEnrollment;
+  department.instructor: request.body.instructor;
+
+  // var department = db.department.build({
+  //     'available': request.body.available,
+  //     'enrollmentCount': request.body.enrollmentCount,
+  //     'courseAbbrivation': request.body.courseAbbrivation,
+  //     'courseNumber': request.body.courseNumber,
+  //     'type': request.body.type,
+  //     'sectionNumber': request.body.sectionNumber,
+  //     'courseTitle': request.body.courseTitle
+  //     'creditHour': request.body.creditHour,
+  //     'timeBegin': request.body.timeBegin,
+  //     'timeEnd': request.body.timeEnd,
+  //     'days': request.body.days,
+  //     'room': request.body.room,
+  //     'building': request.body.building,
+  //     'specialEnrollment': request.body.specialEnrollment,
+  //     'instructor': request.body.instructor
+  //   });
+
+    course.save()
+    .complete(function(err) {
+      if (!!err) {
+        response.send('The instance has not been saved:');
+        console.log('The instance has not been saved:', err)
+      } else {
+        console.log('We have a persisted instance now');
+        response.send('We have a persisted instance now');
+      }
+    });
+}
+
+app.get('/api/course', function(request, response){
+  db.course.findAll().complete(function(err, courses) {
+    if (!!err) {
+      console.log('An error occurred while returning models', err)
+    } else if (!departments) {
+      response.send('uh oh.');
+      console.log('uh oh.')
+    } else {
+      response.send({'courses': courses});
+    }
+  });
+});
+
+
+// Post Example
+
+// router.route('/bears')
+
+//   // create a bear (accessed at POST http://localhost:8080/api/bears)
+//   .post(function(req, res) {
+    
+//     var bear = new Bear();    // create a new instance of the Bear model
+//     bear.name = req.body.name;  // set the bears name (comes from the request)
+
+//     // save the bear and check for errors
+//     bear.save(function(err) {
+//       if (err)
+//         res.send(err);
+
+//       res.json({ message: 'Bear created!' });
+//     });
+    
+//   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
