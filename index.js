@@ -198,26 +198,6 @@ app.get('/api/course', function(request, response){
     
 //   });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 // Example fetch request to get lsu course info
 var fetchDepartments = function(){
   console.log('Fetching departments...');
@@ -257,4 +237,4 @@ var fetchDepartments = function(){
 
 // Wait five seconds and fetch the departments
 setTimeout(fetchDepartments, 1000*5);
->>>>>>> master
+
