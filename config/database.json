@@ -1,12 +1,10 @@
 {
   "dbName": "lsu-scheduler",
-  "dbUser": "root" ,
-  "dbPassword": "bytheway",
+  "dbUser": "lsu-scheduler" ,
+  "dbPassword": "password",
   "connectionInfo": {
-    "dialect":  "mysql",
-    "protocol": "mysql",
-    "port":     "3306",
-    "host":    "localhost",
+	"dialect": "sqlite",
+	"storage": ":memory:",
     "logging":  true
   }
 }

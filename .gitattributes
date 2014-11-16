@@ -1,0 +1,26 @@
+# Text files with fixed EOL requirements
+*.bat text eol=crlf
+*.sh text eol=lf
+
+# Binary files
+*.a binary
+*.afm binary
+*.bmp binary
+*.dat binary
+*.dbf binary
+*.exe binary
+*.frm binary
+*.gif binary
+*.icns binary
+*.ico binary
+*.jpg binary
+*.lbl binary
+*.lib binary
+*.mdb binary
+*.ng binary
+*.odt binary
+*.pdf binary
+*.pfb binary
+*.png binary
+*.sq3 binary
+*.tif binary

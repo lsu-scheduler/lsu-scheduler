@@ -5,14 +5,17 @@
 /tmp
 
 # dependencies
-/node_modules
-/bower_components/*
+node_modules/
+bower_components/
+win-bin/node_modules/
+
+newrelic_agent.log
 
 # misc
 /.sass-cache
 /connect.lock
 /coverage/*
-newrelic_agent.log
+
 /libpeerconnection.log
 npm-debug.log
 testem.log
