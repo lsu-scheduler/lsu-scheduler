@@ -1,8 +1,6 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-	// string, number, boolean, and date
-	// name: DS.attr('string')
 	available: DS.attr('string'),
     enrollmentCount: DS.attr('string'),
     courseAbbrivation: DS.attr('string'),
