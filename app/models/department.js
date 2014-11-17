@@ -1,5 +1,21 @@
 import DS from 'ember-data';
 
+//========================================================================================
+/* 
+/* FILE NAME: App/Modules/Department.js
+/* 
+/* DESCRIPTION: 
+/* 
+/* AUTHORS: 
+/*
+/* REFERENCE: 
+/* 
+/* DATE BY CHANGE DESCRIPTION
+/* ======== ======= =========== =============
+/* 
+/*  
+//========================================================================================
+
  /**
  * Model for a LSU Department. Only used by the front end.
  *

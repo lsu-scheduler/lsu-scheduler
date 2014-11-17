@@ -1,4 +1,20 @@
-import DS from 'ember-data';
+ import DS from 'ember-data';
+ 
+//========================================================================================
+/* 
+/* FILE NAME: App/Modules/Course.js
+/* 
+/* DESCRIPTION: 
+/* 
+/* AUTHORS: 
+/*
+/* REFERENCE: 
+/* 
+/* DATE BY CHANGE DESCRIPTION
+/* ======== ======= =========== =============
+/* 
+/*  
+//========================================================================================
 
  /**
  * Model for a LSU Course. Only used by the front end.

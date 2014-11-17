@@ -1,5 +1,21 @@
 import DS from 'ember-data';
 
+//========================================================================================
+/* 
+/* FILE NAME: App/Modules/Instructor.js
+/* 
+/* DESCRIPTION: 
+/* 
+/* AUTHORS: 
+/*
+/* REFERENCE: 
+/* 
+/* DATE BY CHANGE DESCRIPTION
+/* ======== ======= =========== =============
+/* 
+/*  
+//========================================================================================
+
  /**
  * Model for a LSU Instructor. Used by the front end.
  *
