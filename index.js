@@ -45,12 +45,29 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
+<<<<<<< HEAD
 /**
  * Example select statement from db
  *
  * @method Get Test_DB
  * @return {Object} Test_DB
  */
+=======
+
+// This created a merge conflict =======================================
+// app.get('/db', function (request, response) {
+//   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+//     client.query('SELECT * FROM test_table', function(err, result) {
+//       done();
+//       if(err)
+//        { console.error(err); response.send("Error " + err); }
+//       else
+//        { response.send(result.rows); }
+// =====================================================================
+
+
+// Example select statement from db
+>>>>>>> master
 app.get('/api/test_db', function(request, response){
   db.test_db.findAll().complete(function(err, test_dbs) {
     if (!!err) {
@@ -202,3 +219,43 @@ db.sequelize.sync().complete(function(err) {
     });
   }
 });
+
+// Example fetch request to get lsu course info
+var fetchDepartments = function(){
+  console.log('Fetching departments...');
+  var departmentsExp = /([A-Z,'\s;pma&-]{3,})(?=<\/select>|$)/gm;
+  var url = 'http://appl003.lsu.edu/booklet2.nsf/Selector2?OpenForm';
+  httpRequest({
+    'url': url,
+    headers: {
+      'Host': 'appl003.lsu.edu',
+      'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/33.0',
+      'Referer': 'http://appl003.lsu.edu/booklet2.nsf/Selector2?OpenForm',
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Connection': 'keep-alive'
+    }
+  },
+  function (httpError, httpResponse, httpBody) {
+    lineArray = httpBody.match(departmentsExp);
+    lineArray.forEach(function(line){
+      line = line.trim();
+      if(line != ''){
+        department = db.department.build({
+          'name': line
+        });
+        department.save().complete(function(err) {
+          if (!!err) {
+            console.log('The instance has not been saved:', err);
+          } else {
+            //console.log('We have a persisted instance now');
+          }
+        });
+      }
+    });
+  });
+  // Fetch them every day
+  setTimeout(fetchDepartments, 1000*60*60*24);
+}
+
+// Wait five seconds and fetch the departments
+setTimeout(fetchDepartments, 1000*5);
