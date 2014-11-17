@@ -77,6 +77,27 @@ like `ember s` does
 
 Check out the [project dependencies](https://lsu-scheduler.herokuapp.com/stack), they are all documented extremely well.
 
+## Documentation
+
+### Install Yuidoc
+
+* 'Run npm -g install yuidocjs'
+
+### Write Internal Documentation
+
+Check out this [syntax reference](http://yui.github.io/yuidoc/syntax/index.html), to make sure you use the right tags and format
+
+### Generate External Documentation
+
+I found it works best when you create a seperate directory to generate your external documentation in
+and add the files and folders you want external documentation for in that directory. I only do this since 
+I havent figured out how to ignore files.
+
+* Create a Documentation folder
+* Copy the files and folder that you want to generate external documentation for into the Documentation folder
+* Run yuidoc . 
+
+yuidoc will create a directory named 'out' and the html file will be in there
 
 ## Further Reading / Useful Links
 
