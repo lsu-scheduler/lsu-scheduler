@@ -1,0 +1,13 @@
+{
+  "name": "lsu-scheduler",
+  "version": "0.0.1",
+  "options": {
+    "paths": [
+      "index.js",
+      "models",
+      "app"
+    ],
+    "exclude": "vendor",
+    "outdir": "dist/docs"
+  }
+}

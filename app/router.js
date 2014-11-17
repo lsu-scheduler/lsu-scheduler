@@ -15,17 +15,20 @@ Router.reopen({
 });
 
 Router.map(function() {
-  this.route('schedule', { path: 'schedule' });
-
-  this.resource('model', { path: 'models/:model_id' }, function() { });
-
-  this.resource('department', { path: 'departments/:department_id' }, function() { });
-  this.resource('departments', function() { });
-
-  this.route('stack', { path: 'stack' });
-
-  // Nick: not sure what this does
-  this.resource('course', { path: 'courses/:course_id' }, function() { });
+  // Routes for Departments
+  this.resource('departments', { path: '/departments' }, function() {
+    this.route('index', { path: '/' });
+  });
+  // Routes for Courses
+  this.resource('courses', { path: '/courses' }, function() {
+    this.route('index', { path: '/' });
+  });
+  // Schedule page
+  this.route('schedule', { path: '/schedule' });
+  // Stack page
+  this.route('stack');
+  // Team page
+  this.route('team');
 });
 
 export default Router;

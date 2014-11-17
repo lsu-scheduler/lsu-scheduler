@@ -17,14 +17,9 @@
     "pg": "~2.11.1",
     "request": "~2.47.0",
     "sequelize": "~2.0.0-rc2",
-
-
     "sequelize-cli": "^0.3.3",
     "sqlite3": "~3.0.2",
-
-    "body-parser": "~1.9.2",
     "cors": "~2.5.1"
-
   },
   "scripts": {
     "start": "ember server",
@@ -49,6 +44,7 @@
     "ember-data": "1.0.0-beta.10",
     "express": "^4.8.5",
     "glob": "^4.0.5",
-    "newrelic": "~1.12.2"
+    "newrelic": "~1.12.2",
+    "ember-cli-yuidoc": "~0.3.1"
   }
 }

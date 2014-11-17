@@ -1,0 +1,10 @@
+{
+  "dbName": "lsu-scheduler",
+  "dbUser": "lsu-scheduler" ,
+  "dbPassword": "password",
+  "connectionInfo": {
+    "dialect": "sqlite",
+    "storage": ":memory:",
+    "logging": true
+  }
+}
