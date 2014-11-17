@@ -16,13 +16,17 @@
 /* 11/17/2014 Selby Kendrick     Removed example get for showing how to fetch
 /*                               course info, implemented it for departments,
 /*                               added more detailed comments, and cleaned up the
-/*                               code some.
+/*  * @module widget                             code some.
 /*
 //========================================================================================
 
 /**
- * Provides access data access to the LSU Scheduler database
+ * Server script that controls the LSU Scheduler backend, including
+ * the API used to communicate with front-end clients, managing data requests,
+ * and fetching updated information from LSU's system.
  *
+ * @module lsu-scheduler
+ * @main lsu-scheduler
  * @class LSU Scheduler API
  */
 
