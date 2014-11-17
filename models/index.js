@@ -1,3 +1,15 @@
+/**
+ * Main application file for LSU Scheduler
+ *
+ * Options:
+ *
+ *   - `stream` defaulting to _stdout_ // options here?
+ *
+ * Execute with:
+ *
+ *     node index.js
+ *
+ */
 if (!global.hasOwnProperty('db')) {
   var Sequelize = require('sequelize')
     , sequelize = null
@@ -11,7 +23,7 @@ if (!global.hasOwnProperty('db')) {
       protocol: 'postgres',
       port:     match[4],
       host:     match[3],
-      logging:  true //false
+      logging:  false //false
     })
   } else {
     var fs = require('fs');
@@ -30,12 +42,9 @@ if (!global.hasOwnProperty('db')) {
   global.db = {
     Sequelize: Sequelize,
     sequelize: sequelize,
-    test_db:      sequelize.import(__dirname + '/test'),
     department:      sequelize.import(__dirname + '/department'),
     course:       sequelize.import(__dirname + '/course')
-
     // add your other models here
-
   }
 
   /*
