@@ -1,5 +1,9 @@
-/* jshint node: true */
-
+/**
+ * jshint node: true 
+ * @method exports
+ * @param {} environment
+ * @return ENV
+ */
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'lsu-scheduler',

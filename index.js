@@ -1,4 +1,26 @@
-    // New relic does our performance and avaliability testing/analytics
+//========================================================================================
+/* 
+/* FILE NAME: Index.js
+/* 
+/* DESCRIPTION: API for LSU Scheduler
+/* 
+/* AUTHORS: Chester Schofield, 
+/*
+/* REFERENCE: 
+/* 
+/* DATE BY CHANGE DESCRIPTION
+/* ======== ======= =========== =============
+/* 11/16/2014 Chester Schofield  Created get and post for courses
+/*  
+//========================================================================================
+
+/**
+ * Provides access data access to the LSU Scheduler database
+ *
+ * @class LSU Scheduler API
+ */
+
+// New relic does our performance and avaliability testing/analytics
 require('newrelic');
 // Setup some variables as npm modules
 var express = require('express'),
@@ -23,7 +45,12 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-// Example select statement from db
+/**
+ * Example select statement from db
+ *
+ * @method Get Test_DB
+ * @return {Object} Test_DB
+ */
 app.get('/api/test_db', function(request, response){
   db.test_db.findAll().complete(function(err, test_dbs) {
     if (!!err) {
@@ -37,7 +64,13 @@ app.get('/api/test_db', function(request, response){
   });
 });
 
-// new department
+/**
+ * API method to add a new Department to the database
+ *
+ * @method Post Department
+ * @param {Object} Department object sent in the URL
+ * @return {Status Code} 200 (OK) / 500 (Internal Server Error)
+ */
 app.get('/api/department', function(request, response){
     var name = request.query.name;
     var department = db.department.build({
@@ -54,6 +87,13 @@ app.get('/api/department', function(request, response){
       }
     });
 });
+
+/**
+ * API method retrieve all Departments from the database
+ *
+ * @method Get Departments
+ * @return {Status Code} 200 (OK) / 404 (Not Found) / 500 (Internal Server Error) 
+ */
 app.get('/api/departments', function(request, response){
   db.department.findAll().complete(function(err, departments) {
     if (!!err) {
@@ -85,9 +125,14 @@ app.get('/fetch/courses', function (request, response) {
     response.send(httpBody);
   });
 });
-
-// POST DEV AREA =========================================================================================
-
+ 
+ /**
+ * API method to add a new Course the database
+ *
+ * @method Post Course
+ * @param {Object} Department object sent in the body
+ * @return {Status Code} 200 (OK) / 500 (Internal Server Error)
+ */
 app.post('/api/course', function(request, response)
 {
   var courseBuild = db.course.build({
@@ -119,7 +164,12 @@ app.post('/api/course', function(request, response)
     });
   });
 
-
+/**
+ * API method retrieve all Courses from the database
+ *
+ * @method Get Courses
+ * @return {Status Code} 200 (OK) / 404 (Not Found) / 500 (Internal Server Error) 
+ */
 app.get('/api/course', function(request, response){
   db.course.findAll().complete(function(err, courses) {
     if (!!err) {
@@ -133,10 +183,12 @@ app.get('/api/course', function(request, response){
   });
 });
 
-
-// =======================================================================================================
-
-// Send html file if it doesn't match any backend route
+/**
+ * Send html file if it doesn't match any backend route
+ *
+ * @method Get *
+ * @return {Status Code} 404 (Not Found) 
+ */
 app.get('*', function(request, response){
   response.sendFile(__dirname + '/dist/index.html');
 });
