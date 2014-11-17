@@ -2,16 +2,18 @@
 /* 
 /* FILE NAME: Department.js
 /* 
-/* DESCRIPTION: 
+/* DESCRIPTION: Uses Sequelize to build a Department Model that will be used by the database 
+/*              to build the Course table
 /* 
 /* AUTHORS: 
 /*
 /* REFERENCE: 
 /* 
 /* DATE BY CHANGE DESCRIPTION
-/* ======== ======= =========== =============
-/* 
+/* ======== ======= =========== 
+/* 11/17/2014 Chester Added base comments	 
 /*  
+*/
 //========================================================================================
 
 /**

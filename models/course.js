@@ -2,16 +2,19 @@
 /* 
 /* FILE NAME: Modules/Course.js
 /* 
-/* DESCRIPTION: 
+/* DESCRIPTION: Uses Sequelize to build a Course Model that will be used by the database 
+/*              to build the Course table
 /* 
-/* AUTHORS: 
+/* AUTHORS: Chester Schofield, 
 /*
 /* REFERENCE: 
 /* 
 /* DATE BY CHANGE DESCRIPTION
-/* ======== ======= =========== =============
+/* ======== ======= =========== 
+/* 11/01/2014 Chester Created the model
+/* 11/17/2014 Chester Added base comments 
 /* 
-/*  
+*/ 
 //========================================================================================
 
 /**
