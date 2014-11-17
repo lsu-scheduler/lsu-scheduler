@@ -45,29 +45,31 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-<<<<<<< HEAD
 /**
- * Example select statement from db
+ * Example API method to perform select statement from db
  *
- * @method Get Test_DB
+ * @method Get all from Test_DB
  * @return {Object} Test_DB
  */
-=======
+app.get('/db', function (request, response) {
+  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    client.query('SELECT * FROM test_table', function(err, result) {
+      done();
+      if(err){ 
+        console.error(err); response.send("Error " + err); 
+      }
+      else{ 
+        response.send(result.rows); 
+      }
+   )}
+)};
 
-// This created a merge conflict =======================================
-// app.get('/db', function (request, response) {
-//   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-//     client.query('SELECT * FROM test_table', function(err, result) {
-//       done();
-//       if(err)
-//        { console.error(err); response.send("Error " + err); }
-//       else
-//        { response.send(result.rows); }
-// =====================================================================
-
-
-// Example select statement from db
->>>>>>> master
+/**
+ * Example API method to find all from the databases
+ *
+ * @method Get all from Test_DB
+ * @return {Object} Test_DB
+ */
 app.get('/api/test_db', function(request, response){
   db.test_db.findAll().complete(function(err, test_dbs) {
     if (!!err) {
@@ -147,7 +149,7 @@ app.get('/fetch/courses', function (request, response) {
  * API method to add a new Course the database
  *
  * @method Post Course
- * @param {Object} Department object sent in the body
+ * @param {Object} Course object sent in the body
  * @return {Status Code} 200 (OK) / 500 (Internal Server Error)
  */
 app.post('/api/course', function(request, response)
