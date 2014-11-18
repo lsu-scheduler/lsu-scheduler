@@ -43,7 +43,7 @@ var express = require('express'), // Express is the server provider
   httpRequest = require('request').defaults({jar: true, debug: true}), // We use this to get data from lsu servers
   bodyParser = require('body-parser'), // So we can parse the various formats we will recieve
   cors = require('cors'),
-  api = require('sequelize-json-api'); // Enable cors to allow cross site scripting cause why not
+  api = require('./lib/sequelize-json-api'); // Enable cors to allow cross site scripting cause why not
 
 // Configure express
 app.set('port', (process.env.PORT || 5000)); // Port to use, process.env.PORT is set by heroku
