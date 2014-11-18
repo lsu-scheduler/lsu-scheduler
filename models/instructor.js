@@ -5,12 +5,13 @@
 /* DESCRIPTION: Uses Sequelize to build a Department Model that will be used by the database 
 /*              to build the Department table
 /* 
-/* AUTHORS: Chester Schofield
+/* AUTHORS: Chester Schofield, Alfonso Bausa
 /*
 /* REFERENCE: 
 /* 
 /* DATE BY CHANGE DESCRIPTION
 /* ======== ======= =========== 
+/* 11/16/2014 Alfonso created instructor model
 /* 11/17/2014 Chester Added base comments
 /* 
 */ 
