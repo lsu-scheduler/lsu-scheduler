@@ -12,6 +12,7 @@ import DS from 'ember-data';
 /* 
 /* DATE BY CHANGE DESCRIPTION
 /* ======== ======= =========== =============
+/* 11/16/2014 Alfosno Created Instructor Model
 /* 11/17/2014 Chester Added base comments
 /*  
 */
