@@ -2,16 +2,18 @@
 /* 
 /* FILE NAME: Modules/Instructor.js
 /* 
-/* DESCRIPTION: 
+/* DESCRIPTION: Uses Sequelize to build a Department Model that will be used by the database 
+/*              to build the Department table
 /* 
-/* AUTHORS: 
+/* AUTHORS: Chester Schofield
 /*
 /* REFERENCE: 
 /* 
 /* DATE BY CHANGE DESCRIPTION
-/* ======== ======= =========== =============
+/* ======== ======= =========== 
+/* 11/17/2014 Chester Added base comments
 /* 
-/*  
+*/ 
 //========================================================================================
 
 /**
