@@ -3,8 +3,8 @@
 /* FILE NAME: Modules/Index.js
 /*
 /* DESCRIPTION: Main application file for LSU Scheduler.
-/*               Execute with 'node index.js'
-/*                Options:`stream` defaulting to _stdout_ // options here?
+/*              Execute with 'node index.js'
+/*              Options:`stream` defaulting to _stdout_ // options here?
 /*
 /* AUTHORS: Chester Schofield
 /*

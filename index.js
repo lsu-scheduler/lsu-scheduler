@@ -67,24 +67,13 @@ api.initialize();
 app.use('/api', api);
 
 /**
- * Send html file if it doesn't match any backend route
+ * Send ./dist/index.html file if it doesn't match any generated rest api route
  *
  * @method Get *
  * @return {Status Code} 404 (Not Found)
  */
 app.get('*', function(request, response){
   response.sendFile(__dirname + '/dist/index.html');
-});
-
-// Sync the database and start start listening so we can respond to requests
-db.sequelize.sync({ force: true }).complete(function(err) {
-  if (err) {
-    throw err[0];
-  } else {
-    http.createServer(app).listen(app.get('port'), function(){
-      console.log('Express server listening on port ' + app.get('port'));
-    });
-  }
 });
 
 /**
@@ -127,6 +116,17 @@ var fetchDepartments = function(){
     });
   });
 }
+
+// Sync the database and start start listening so we can respond to requests
+db.sequelize.sync().complete(function(err) {
+  if (err) {
+    throw err[0];
+  } else {
+    http.createServer(app).listen(app.get('port'), function(){
+      console.log('Express server listening on port ' + app.get('port'));
+    });
+  }
+});
 
 // Seconds to wait before inital data fetches. Slower computers may take longer
 // to set everything up and be ready to start saving data into the database
