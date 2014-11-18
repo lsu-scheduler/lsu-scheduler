@@ -19,7 +19,8 @@
     "sequelize": "~2.0.0-rc2",
     "sequelize-cli": "^0.3.3",
     "sqlite3": "~3.0.2",
-    "cors": "~2.5.1"
+    "cors": "~2.5.1",
+    "sequelize-json-api": "learntracker/sequelize-json-api"
     },
   "scripts": {
     "start": "ember server",
