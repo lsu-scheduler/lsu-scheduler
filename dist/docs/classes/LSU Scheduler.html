@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Application Instructor Model - LSU Scheduler Web Application</title>
+    <title>LSU Scheduler - LSU Scheduler Web Application</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -102,7 +102,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Application Instructor Model Class</h1>
+                        <h1>LSU Scheduler Class</h1>
 <div class="box meta">
     
 
@@ -110,13 +110,13 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/app_models_instructor.js.html#l21"><code>app&#x2F;models&#x2F;instructor.js:21</code></a>
+            Defined in: <a href="../files/index.js.html#l23"><code>index.js:23</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/lsu-scheduler.html">lsu-scheduler</a>
+            Module: <a href="../modules/fetch.html">fetch</a>
         
     
 
@@ -126,67 +126,12 @@
 
 
 <div class="box intro">
-    <p>Model for a LSU Instructor. Used by the front end.</p>
+    <p>Server script that controls the LSU Scheduler backend, including
+the API used to communicate with front-end clients, managing data requests,
+and fetching updated information from LSU&#39;s system.</p>
 
 </div>
 
-
-    <div class="constructor">
-        <h2>Constructor</h2>
-        <div id="method_Application Instructor Model" class="method item">
-    <h3 class="name"><code>Application Instructor Model</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/app_models_instructor.js.html#l21"><code>app&#x2F;models&#x2F;instructor.js:21</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-    </div>
 
 
 <div id="classdocs" class="tabview">
@@ -212,7 +157,28 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
-                                <a href="#method_Constructor">Constructor</a>
+                                <a href="#method_config">config</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_config">config</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_run">run</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_setupRouting">setupRouting</a>
 
                                 
                                 
@@ -234,8 +200,8 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method_Constructor" class="method item">
-    <h3 class="name"><code>Constructor</code></h3>
+                    <div id="method_config" class="method item">
+    <h3 class="name"><code>config</code></h3>
 
     
         <div class="args">
@@ -243,37 +209,7 @@
             
                 <li class="arg">
                     
-                        <code>Name</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>Course</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>Course</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>Room</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>Building</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>Department</code>
+                        <code>sequelizeJsonApiConfig</code>
                     
                 </li>
             
@@ -281,6 +217,10 @@
         </div>
     
 
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
     
 
     
@@ -299,6 +239,8 @@
         
             
                 
+                    <p>Provided by the <a href="../modules/lsu-scheduler.html">lsu-scheduler</a> module.</p>
+                
                 <p>
                 
                 Defined in
@@ -306,7 +248,7 @@
             
         
         
-        <a href="../files/app_models_instructor.js.html#l28"><code>app&#x2F;models&#x2F;instructor.js:28</code></a>
+        <a href="../files/index.js.html#l48"><code>index.js:48</code></a>
         
         </p>
 
@@ -317,7 +259,7 @@
     </div>
 
     <div class="description">
-        <p>Constructs a new Application Instructor Model</p>
+        <p>Generates API routes for all of the ./models that are allowed in config var</p>
 
     </div>
 
@@ -329,87 +271,8 @@
             
                 <li class="param">
                     
-                        <code class="param-name">Name</code>
-                        <span class="type">String</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">Course</code>
-                        <span class="type">String</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>Abbreviation</p>
-
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">Course</code>
-                        <span class="type">Integer</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>Number</p>
-
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">Room</code>
-                        <span class="type">Integer</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>Number</p>
-
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">Building</code>
-                        <span class="type">String</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>Name</p>
-
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">Department</code>
-                        <span class="type">String</span>
+                        <code class="param-name">sequelizeJsonApiConfig</code>
+                        <span class="type">Json</span>
                     
 
                     
@@ -425,6 +288,306 @@
         </div>
     
 
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>void</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_config" class="method item">
+    <h3 class="name"><code>config</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>express</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                    <p>Provided by the <a href="../modules/lsu-scheduler.html">lsu-scheduler</a> module.</p>
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/index.js.html#l64"><code>index.js:64</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Configure Express server to use Heroku port or 5000, use gzip compression, automatgickly
+parse json requests to get  js object, and accept url-encodingsds</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">express</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>void</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_run" class="method item">
+    <h3 class="name"><code>run</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                    <p>Provided by the <a href="../modules/lsu-scheduler.html">lsu-scheduler</a> module.</p>
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/index.js.html#l108"><code>index.js:108</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Runs lsu-scheduler by setting up express, building api routes, and seting up
+the database to start serving LSU Scheduler and all it&#39;s goodness</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>void</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_setupRouting" class="method item">
+    <h3 class="name"><code>setupRouting</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>express</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                    <p>Provided by the <a href="../modules/lsu-scheduler.html">lsu-scheduler</a> module.</p>
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/index.js.html#l87"><code>index.js:87</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Tell express how to serve routes for /, /docs, and serve a restful api interface
+of all the models configured in ./models</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">express</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>void</p>
+
+                
+            </div>
+        </div>
     
 
     

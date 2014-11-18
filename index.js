@@ -27,7 +27,7 @@
  *
  * @module lsu-scheduler
  * @main lsu-scheduler
- * @class LSU Scheduler API
+ * @class LSU Scheduler
  */
 
 // New relic does our performance and avaliability testing/analytics
@@ -37,13 +37,7 @@ require('newrelic');
 // Import the npm modules we need to use
 var express = require('express'), // Express is the server provider
   http = require('http'), // node's http system
-  compress = require('compression'), // this compresses stuff
-  db = require('./models'), // Sequelize!
-  httpRequest = require('request').defaults({jar: true, debug: true}), // We use this to get data from lsu servers
-  bodyParser = require('body-parser'), // So we can parse the various formats we will recieve
-  cors = require('cors'),
-  api = require('sequelize-json-api'); // Enable cors to allow cross site scripting cause why not;
-
+  db = require('./models'); // Sequelize!
 
 var config = {
   sequelizeJsonApi: {
@@ -60,7 +54,8 @@ var config = {
  */
 var generateApiRoutes = function(sequelizeJsonApiConfig){
   // Configure the api
-  var apiRoutes = api(db.sequelize, sequelizeJsonApiConfig);
+  var apiRoutes = api = require('sequelize-json-api'); // api mod
+  apiRoutes = api(db.sequelize, sequelizeJsonApiConfig);
   //Generate routes for models in config
   apiRoutes.initialize();
   return apiRoutes;
@@ -75,14 +70,17 @@ var generateApiRoutes = function(sequelizeJsonApiConfig){
  * @return void
  */
 var setupExpress = function(expressApp){
+  var compress = require('compression'), // this compresses stuff
+      bodyParser = require('body-parser'), // So we can parse the various formats we will recieve
+      cors = require('cors');
   // Configure express
   expressApp.set('port', (process.env.PORT || 5000)); // Port to use, process.env.PORT is set by heroku
   expressApp.use(compress()); // Tells Express to use gzip encryption
   expressApp.use( bodyParser.json() ); // JSON-encoded body support
-  expressApp.use( cors() ); // cors enables cross site scripting
   expressApp.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
   }));
+  expressApp.use( cors() ); // cors enables cross site scripting
   return expressApp;
 }
 
@@ -108,10 +106,10 @@ var setupRouting = function(expressApp, apiRoutes){
 };
 
 /**
- * Sets up express, builds api routes, sets up the database and starts serving
+ * Runs lsu-scheduler by setting up express, building api routes, and seting up
+ * the database to start serving LSU Scheduler and all it's goodness
  *
- * @method setupRouting
- * @param {Object} express
+ * @method run
  * @return void
  */
 var run = function(){
@@ -133,6 +131,9 @@ var run = function(){
     }
   });
 };
+
+// run lsu-scheduler
+run();
 
 /**
  * Controls fetching information from the open lsu booklet portal
@@ -170,6 +171,7 @@ var fetch = {
    * @return void
    */
   fetchDepartments: function(){
+    var httpRequest = require('request').defaults({jar: true, debug: true});
     console.log('Fetching departments...');
     var departmentsExp = /([A-Z,'\s;pma&-]{3,})(?=<\/select>|$)/gm; // regex
     var url = 'http://appl003.lsu.edu/booklet2.nsf/Selector2?OpenForm';
@@ -204,7 +206,5 @@ var fetch = {
   }
 };
 
-// run lsu-scheduler
-run();
 // Start fetching data
 fetch.fetchData(5, 3, 72);
