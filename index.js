@@ -165,18 +165,6 @@ app.get('*', function(request, response){
   response.sendFile(__dirname + '/dist/index.html');
 });
 
-
-// Sync the database and start start listening so we can respond to requests
-db.sequelize.sync().complete(function(err) {
-  if (err) {
-    throw err[0];
-  } else {
-    http.createServer(app).listen(app.get('port'), function(){
-      console.log('Express server listening on port ' + app.get('port'));
-    });
-  }
-});
-
 /**
  * Sends a request to an LSU server that returns the names of all of the departments
  * at LSU and saves them to the database
@@ -217,6 +205,17 @@ var fetchDepartments = function(){
     });
   });
 }
+
+// Sync the database and start start listening so we can respond to requests
+db.sequelize.sync().complete(function(err) {
+  if (err) {
+    throw err[0];
+  } else {
+    http.createServer(app).listen(app.get('port'), function(){
+      console.log('Express server listening on port ' + app.get('port'));
+    });
+  }
+});
 
 // Seconds to wait before inital data fetches. Slower computers may take longer
 // to set everything up and be ready to start saving data into the database
