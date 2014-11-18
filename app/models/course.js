@@ -12,6 +12,7 @@
 /* 
 /* DATE BY CHANGE DESCRIPTION
 /* ======== ======= =========== 
+/* 11/16/2014 Chester Created Course Model
 /* 11/17/2014 Chester Added base comments
 /*  
 */
