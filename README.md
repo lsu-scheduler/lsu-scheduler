@@ -3,7 +3,7 @@
 This README outlines the details of collaborating on this [Ember](http://emberjs.joefiorini.com/)/[Node.js](http://nodejs.org/)
 application hosted freely by [Heroku](https://heroku.com/).
 
-[a short introduction of this app]
+You might want to check out the [documentation](https://lsu-scheduler.herokuapp.com/docs).
 
 ## Getting Started
 
