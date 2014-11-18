@@ -599,7 +599,7 @@
             "line": 48,
             "description": "Generates API routes for all of the ./models that are allowed in config var",
             "itemtype": "method",
-            "name": "config",
+            "name": "generateApiRoutes",
             "params": [
                 {
                     "name": "sequelizeJsonApiConfig",
@@ -618,7 +618,7 @@
             "line": 64,
             "description": "Configure Express server to use Heroku port or 5000, use gzip compression, automatgickly\nparse json requests to get  js object, and accept url-encodingsds",
             "itemtype": "method",
-            "name": "config",
+            "name": "setupExpress",
             "params": [
                 {
                     "name": "express",
