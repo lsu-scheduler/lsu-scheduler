@@ -6,7 +6,7 @@ import DS from 'ember-data';
 /* 
 /* DESCRIPTION: 
 /* 
-/* AUTHORS: Chester Schofield
+/* AUTHORS: Chester Schofield, Alfonso Bausa
 /*
 /* REFERENCE: 
 /* 
