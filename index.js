@@ -48,7 +48,7 @@ var config = {
 /**
  * Generates API routes for all of the ./models that are allowed in config var
  *
- * @method config
+ * @method generateApiRoutes
  * @param {Json} sequelizeJsonApiConfig
  * @return void
  */
@@ -65,7 +65,7 @@ var generateApiRoutes = function(sequelizeJsonApiConfig){
  * Configure Express server to use Heroku port or 5000, use gzip compression, automatgickly
  * parse json requests to get  js object, and accept url-encodingsds
  *
- * @method config
+ * @method setupExpress
  * @param {Object} express
  * @return void
  */
