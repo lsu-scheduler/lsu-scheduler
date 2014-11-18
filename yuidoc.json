@@ -1,13 +1,9 @@
 {
-  "name": "lsu-scheduler",
-  "version": "0.0.1",
+  "name": "LSU Scheduler Web Application",
+  "version": "1.0",
   "options": {
-    "paths": [
-      "index.js",
-      "models",
-      "app"
-    ],
-    "exclude": "vendor",
-    "outdir": "dist/docs"
+  	"paths": [ "app"],
+    "outdir": "docs",
+    "extension": ".js"
   }
 }
