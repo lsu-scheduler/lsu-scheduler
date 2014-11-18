@@ -42,7 +42,8 @@ var express = require('express'), // Express is the server provider
   db = require('./models'), // Sequelize!
   httpRequest = require('request').defaults({jar: true, debug: true}), // We use this to get data from lsu servers
   bodyParser = require('body-parser'), // So we can parse the various formats we will recieve
-  cors = require('cors'); // Enable cors to allow cross site scripting cause WE DON GIVE A FUCK
+  cors = require('cors'),
+  api = require('sequelize-json-api'); // Enable cors to allow cross site scripting cause why not
 
 // Configure express
 app.set('port', (process.env.PORT || 5000)); // Port to use, process.env.PORT is set by heroku
@@ -55,105 +56,13 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 
 
-/**
- * API method to add a new Department to the database
- *
- * @method Post Department
- * @param {Object} Department object sent in the URL
- * @return {Status Code} 200 (OK) / 500 (Internal Server Error)
- */
-app.get('/api/department', function(request, response){
-    var name = request.query.name;
-    var department = db.department.build({
-      'name': name
-    });
-  department.save()
-    .complete(function(err) {
-      if (!!err) {
-        response.send('The instance has not been saved:');
-        console.log('The instance has not been saved:', err)
-      } else {
-        console.log('We have a persisted instance now');
-        response.send('We have a persisted instance now');
-      }
-    });
+api = api(db.sequelize,{
+  endpoint: '/api', // needed for href calculation
 });
 
-/**
- * API method retrieve all Departments from the database
- *
- * @method Get Departments
- * @return {Status Code} 200 (OK) / 404 (Not Found) / 500 (Internal Server Error)
- */
-app.get('/api/departments', function(request, response){
-  db.department.findAll().complete(function(err, departments) {
-    if (!!err) {
-      console.log('An error occurred while returning models', err)
-    } else if (!departments) {
-      response.send('uh oh.');
-      console.log('uh oh.')
-    } else {
-      response.send({'departments': departments});
-    }
-  });
-});
+api.initialize();
 
- /**
- * API method to add a new Course the database
- *
- * @method Post Course
- * @param {Object} Course object sent in the body
- * @return {Status Code} 200 (OK) / 500 (Internal Server Error)
- */
-app.post('/api/course', function(request, response)
-{
-  var courseBuild = db.course.build({
-      'available': request.body.available,
-      'enrollmentCount': request.body.enrollmentCount,
-      'courseAbbrivation': request.body.courseAbbrivation,
-      'courseNumber': request.body.courseNumber,
-      'type': request.body.type,
-      'sectionNumber': request.body.sectionNumber,
-      'courseTitle': request.body.courseTitle,
-      'creditHour': request.body.creditHour,
-      'timeBegin': request.body.timeBegin,
-      'timeEnd': request.body.timeEnd,
-      'days': request.body.days,
-      'room': request.body.room,
-      'building': request.body.building,
-      'specialEnrollment': request.body.specialEnrollment,
-      'instructor': request.body.instructor
-    });
-    courseBuild.save()
-    .complete(function(err) {
-        if (!!err) {
-          response.send('The instance has not been saved:');
-          console.log('The instance has not been saved:', err)
-        } else {
-          console.log('We have a persisted instance now');
-          response.send('We have a persisted instance now');
-        }
-    });
-  });
-
-/**
- * API method retrieve all Courses from the database
- *
- * @method Get Courses
- * @return {Status Code} 200 (OK) / 404 (Not Found) / 500 (Internal Server Error)
- */
-app.get('/api/courses', function(request, response){
-  db.course.findAll().complete(function(err, courses) {
-    if (!!err) {
-      console.log('An error occurred while returning models', err)
-    } else if (!courses) {
-      response.send('uh oh.');
-      console.log('uh oh.')
-    } else {
-      response.send({'courses': courses});
-    }
-  });
-});
+app.use('/api', api);
 
 /**
  * Send html file if it doesn't match any backend route
