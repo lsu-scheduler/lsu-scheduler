@@ -1,27 +1,27 @@
 //========================================================================================
-/* 
+/*
 /* FILE NAME: Modules/Instructor.js
-/* 
-/* DESCRIPTION: Uses Sequelize to build a Department Model that will be used by the database 
+/*
+/* DESCRIPTION: Uses Sequelize to build a Department Model that will be used by the database
 /*              to build the Department table
-/* 
+/*
 /* AUTHORS: Chester Schofield, Alfonso Bausa
 /*
-/* REFERENCE: 
-/* 
+/* REFERENCE:
+/*
 /* DATE BY CHANGE DESCRIPTION
-/* ======== ======= =========== 
+/* ======== ======= ===========
 /* 11/16/2014 Alfonso created instructor model
 /* 11/17/2014 Chester Added base comments
-/* 
-*/ 
+/*
+*/
 //========================================================================================
 
 /**
  * Model for a LSU Instructor. Only used by the back end.
  *
  * @class Sequelize Instructor Model
- * @constructor 
+ * @constructor
  */
 
  /**

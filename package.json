@@ -21,7 +21,7 @@
     "sqlite3": "~3.0.2",
     "cors": "~2.5.1",
     "sequelize-json-api": "learntracker/sequelize-json-api"
-    },
+  },
   "scripts": {
     "start": "ember server",
     "build": "ember build",
@@ -46,6 +46,7 @@
     "ember-data": "1.0.0-beta.10",
     "express": "^4.8.5",
     "glob": "^4.0.5",
-    "newrelic": "~1.12.2"
+    "newrelic": "~1.12.2",
+    "ember-cli-less": "~1.0.5"
   }
 }

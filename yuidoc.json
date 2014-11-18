@@ -3,8 +3,8 @@
   "version": "1.0",
   "options": {
   	"paths": [ "./"],
-    "exclude": "bower_components, config, dist, node_modules, public, tests, tmp, win-bin", 
-    "outdir": "./dist/docs",
+    "exclude": "bower_components,config,dist,node_modules,public,tests,tmp,win-bin,ember",
+    "outdir": "./public/docs",
     "extension": ".js"
   }
 }
