@@ -16,7 +16,7 @@
 /* 11/17/2014 Selby Kendrick     Removed example get for showing how to fetch
 /*                               course info, implemented it for departments,
 /*                               added more detailed comments, and cleaned up the
-/*  * @module widget                             code some.
+/*                               code some.
 /*
 //========================================================================================
 
@@ -55,24 +55,15 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-// Sync the database and start start listening so we can respond to requests
-db.sequelize.sync({ force: true }).complete(function(err) {
-  if (err) {
-    throw err[0];
-  } else {
-    http.createServer(app).listen(app.get('port'), function(){
-      console.log('Express server listening on port ' + app.get('port'));
-    });
-  }
-});
-
-
+// Setup the api
 api = api(db.sequelize,{
   endpoint: '/api', // needed for href calculation
 });
 
+// Create routes for all models that exist in ./models and are defined in ./models/index.js
 api.initialize();
 
+// Use the routes sequelize-json-api (api) generated for us
 app.use('/api', api);
 
 /**
@@ -85,8 +76,16 @@ app.get('*', function(request, response){
   response.sendFile(__dirname + '/dist/index.html');
 });
 
-
-
+// Sync the database and start start listening so we can respond to requests
+db.sequelize.sync({ force: true }).complete(function(err) {
+  if (err) {
+    throw err[0];
+  } else {
+    http.createServer(app).listen(app.get('port'), function(){
+      console.log('Express server listening on port ' + app.get('port'));
+    });
+  }
+});
 
 /**
  * Sends a request to an LSU server that returns the names of all of the departments
