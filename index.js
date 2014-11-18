@@ -56,7 +56,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 
 // Sync the database and start start listening so we can respond to requests
-db.sequelize.sync().complete(function(err) {
+db.sequelize.sync({ force: true }).complete(function(err) {
   if (err) {
     throw err[0];
   } else {
