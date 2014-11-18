@@ -20,7 +20,7 @@
     "sequelize-cli": "^0.3.3",
     "sqlite3": "~3.0.2",
     "cors": "~2.5.1",
-    "sequelize-json-api": "http://git@github.com:learntracker/sequelize-json-api.git"
+    "sequelize-json-api": "http://github.com:learntracker/sequelize-json-api.git"
   },
   "scripts": {
     "start": "ember server",
