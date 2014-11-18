@@ -33,19 +33,7 @@
 // New relic does our performance and avaliability testing/analytics
 // This should be the first statement in index.
 require('newrelic');
-<<<<<<< HEAD
-// Setup some variables as npm modules
-var express = require('express'),
-  app = express(),
-  http = require('http'),
-  compress = require('compression'),
-  db = require('./models'),
-  httpRequest = require('request').defaults({jar: true, debug: true}),
-  bodyParser = require('body-parser'),
-  cors = require('cors');
-// Tell Express which port to use, process.env.PORT is set by heroku
-app.set('port', (process.env.PORT || 5000));
-=======
+
 
 // Import the npm modules we need to use
 var express = require('express'), // Express is the server provider
@@ -56,7 +44,6 @@ var express = require('express'), // Express is the server provider
   httpRequest = require('request').defaults({jar: true, debug: true}), // We use this to get data from lsu servers
   bodyParser = require('body-parser'), // So we can parse the various formats we will recieve
   cors = require('cors'); // Enable cors to allow cross site scripting cause WE DON GIVE A FUCK
->>>>>>> 294987c8db0f0b0de32fc240619e19c4f13acf32
 
 // Configure express
 app.set('port', (process.env.PORT || 5000)); // Port to use, process.env.PORT is set by heroku
@@ -112,33 +99,6 @@ app.get('/api/departments', function(request, response){
   });
 });
 
-<<<<<<< HEAD
-/**
- *  Fetch request to get lsu course info from the LSU Course Catalog
- *
- * @method Fetch Courses
- * @return {Status Code} 200 (OK) / 500 (Internal Server Error)
- */
-app.get('/fetch/courses', function (request, response) {
-  var url = 'http://appl003.lsu.edu/booklet2.nsf/All/02FDBC283730AC5386257D69002EC178?OpenDocument&SemesterDesc=Spring+2015&Department=ACCOUNTING';
-  // -H 'Cookie: __utma=70724879.1274179569.1412707450.1412707450.1412982781.2; __utmz=70724879.1412982781.2.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); sso-logout-time="Thu Nov 06 2014 19:56:55 GMT-0600 (Central Standard Time)"; __utma=1.944113822.1415309095.1415309095.1415309095.1; __utmb=1.2.10.1415309095; __utmc=1; __utmz=1.1415309095.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1'
-  httpRequest({
-    'url': url,
-    headers: {
-     'Host': 'appl003.lsu.edu',
-     'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/33.0',
-     'Referer': 'http://appl003.lsu.edu/booklet2.nsf/Selector2?OpenForm',
-     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-     'Connection': 'keep-alive'
-    }
-  },
-  function (httpError, httpResponse, httpBody) {
-    response.send(httpBody);
-  });
-});
- 
-=======
->>>>>>> 294987c8db0f0b0de32fc240619e19c4f13acf32
  /**
  * API method to add a new Course the database
  *
@@ -206,30 +166,12 @@ app.get('*', function(request, response){
   response.sendFile(__dirname + '/dist/index.html');
 });
 
-<<<<<<< HEAD
-db.sequelize.sync().complete(function(err) {
-  if (err) {
-    throw err[0];
-  } else {
-    http.createServer(app).listen(app.get('port'), function(){
-      console.log('Express server listening on port ' + app.get('port'));
-    });
-  }
-});
-
-/**
- * Fetch request to get lsu department info from the LSU Course Catalog
- *
- * @method Fetch Departments
- * @return {Status Code} 200 (OK) / 500 (Internal Server Error)
-=======
 /**
  * Sends a request to an LSU server that returns the names of all of the departments
  * at LSU and saves them to the database
  *
  * @param int number of hours to wait between requests
  * @return void
->>>>>>> 294987c8db0f0b0de32fc240619e19c4f13acf32
  */
 var fetchDepartments = function(){
   console.log('Fetching departments...');
@@ -263,17 +205,6 @@ var fetchDepartments = function(){
       }
     });
   });
-<<<<<<< HEAD
-
-  setTimeout(fetchDepartments, 1000*60*60*24);
-}
-
-setTimeout(fetchDepartments, 1000*5);
-
-
-
-
-=======
 }
 
 // Sync the database and start start listening so we can respond to requests
@@ -298,4 +229,3 @@ setTimeout(function(){
     fetchDepartments();
   }, 1000*60*60*24);
 }, 1000*secondsToWait);
->>>>>>> 294987c8db0f0b0de32fc240619e19c4f13acf32
