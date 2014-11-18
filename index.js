@@ -55,6 +55,17 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
+// Sync the database and start start listening so we can respond to requests
+db.sequelize.sync().complete(function(err) {
+  if (err) {
+    throw err[0];
+  } else {
+    http.createServer(app).listen(app.get('port'), function(){
+      console.log('Express server listening on port ' + app.get('port'));
+    });
+  }
+});
+
 
 api = api(db.sequelize,{
   endpoint: '/api', // needed for href calculation
@@ -75,16 +86,7 @@ app.get('*', function(request, response){
 });
 
 
-// Sync the database and start start listening so we can respond to requests
-db.sequelize.sync().complete(function(err) {
-  if (err) {
-    throw err[0];
-  } else {
-    http.createServer(app).listen(app.get('port'), function(){
-      console.log('Express server listening on port ' + app.get('port'));
-    });
-  }
-});
+
 
 /**
  * Sends a request to an LSU server that returns the names of all of the departments
