@@ -32,7 +32,7 @@ You will need the following things properly installed on your computer.
 ### Installation
 
 ```bash
-$ git clone git://github.com/selbyk/lsu-scheduler.git
+$ git clone git://github.com/lsu-scheduler/lsu-scheduler.git
 $ cd lsu-scheduler
 $ npm install
 $ bower install
